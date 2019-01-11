@@ -17,6 +17,10 @@ app.post("/failure", (req, res)=> {
     res.redirect("/");
 })
 
+app.post("/success", (req, res)=> {
+    res.redirect("/");
+})
+
 app.post("/", (req, res) => {
     const firstName = req.body.fName
     const lastName = req.body.lName
@@ -68,6 +72,6 @@ app.post("/", (req, res) => {
 
 // 53660bca92
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, function(){
     console.log("Server started at port 3000")
 })
